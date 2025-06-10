@@ -1,0 +1,15 @@
+<h2>📋 List of Incidents</h2>
+<ul *ngIf="incidents.length > 0">
+  <div *ngFor="let incident of incidents">
+    <mat-card class="incidentcard" appearance="outlined">
+        <mat-card-header class="incidentcardheader">
+            <mat-card-title>{{ incident.type }}</mat-card-title>
+            <button class="incidentstatus" matButton="tonal"  disabled>{{incident.status}}</button>
+        </mat-card-header>
+        <mat-card-content>
+            <p> At {{ incident.location }} on {{ incident.timestamp }}.</p>
+        </mat-card-content>
+    </mat-card>
+    </div>
+</ul>
+<p *ngIf="incidents.length === 0">No incidents found.</p>
